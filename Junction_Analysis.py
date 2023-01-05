@@ -78,7 +78,7 @@ if show_images and len(img_files) > 5:
     show_images = False
 
 for item in img_files:
-    #try:
+    try:
         img = open_image(item)
         print 'Processing', item
         mask = process(img, filter_type=filter_type, radius=radius)
@@ -87,7 +87,7 @@ for item in img_files:
             mask.show()
         if save_mask:
             save_image(mask, outputdir)
-    #except:
+    except:
         print 'Error, skipping', item
     #rt = ResultsTable.getResultsTable()
     #rt.saveAs(os.path.join(outputdir, "Results.csv"))
